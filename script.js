@@ -18,6 +18,7 @@
 let beats = {
     "65": {
         beat: new Beat("./assets/Piano Chord 331.mp3"),
+        button:new Button('#00fffe',65)
     },
     "83": {
         beat: new Beat("./assets/Piano Chord 209.mp3"),
@@ -54,6 +55,8 @@ const keyCode=e.keyCode;
 if(keyCode in beats){
    let keyPress=beats[keyCode]
    keyPress.beat.play()
+   keyPress.button.select()
+   
 }else{
     console.log('Key not found')
 }
